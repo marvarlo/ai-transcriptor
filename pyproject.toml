@@ -1,0 +1,20 @@
+[project]
+name = "transcriptor"
+version = "0.1.0"
+description = "Local transcription and summarization for audio and video"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.28.1",
+]
+
+[project.scripts]
+transcriptor = "transcriptor.cli:main"
+resumir-transcripciones = "transcriptor.summary_cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/transcriptor"]
